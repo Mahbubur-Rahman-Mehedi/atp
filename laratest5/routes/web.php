@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//login controller
+
+//for get request
+// Route::get('/login', ['uses'=>'LoginController@index']);
+Route::get('/login', [LoginController::class,'index']); //laravel 8
+//for post request
+// Route::post('/login', ['uses'=>'LoginController@verify']);
+Route::post('/login', [LoginController::class,'verify']);
+
+Route::get('/register', function () {
+   echo "this is signup page";
+});
+
+Route::get('/home', [HomeController::class,'index']);
+
+Route::get('/logout', [LogoutController::class,'index']);
