@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo "Test request";
+    //return view('welcome');
 });
 
 //login controller
@@ -31,6 +34,12 @@ Route::get('/register', function () {
    echo "this is signup page";
 });
 
+Route::post('/register', function () {
+    echo "this is signup page";
+ });
+
 Route::get('/home', [HomeController::class,'index']);
 
 Route::get('/logout', [LogoutController::class,'index']);
+
+
