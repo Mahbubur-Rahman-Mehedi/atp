@@ -26,8 +26,6 @@ class LoginController extends Controller
         */
         return redirect('/home');
 
-    } else{
-        echo "invalid";
     }
 }
 
