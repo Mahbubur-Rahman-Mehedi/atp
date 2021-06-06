@@ -8,7 +8,7 @@ class LogoutController extends Controller
 {
     public function index()
     {
-        return redirect('login.index');
+        return redirect('/login');
     }
 
 }
