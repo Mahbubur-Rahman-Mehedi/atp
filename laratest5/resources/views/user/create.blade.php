@@ -9,6 +9,8 @@
 <body>
     <a href="/home">Home</a>
     <a href="/logout">Logout</a>
+
+    <h3>Create new user</h3>
     <form action="" method="post">
     <table>
 		<tr>

@@ -14,7 +14,7 @@
     {{$name}} --}}
     <h1> Welcome Home! {{$name}} </h1>
     <a href="/user/create"> create User </a>
-    <a href="/user/all">View all users </a>
+    <a href="/user/list">View all users </a>
     <a href="/logout">
         <input type="button" name="logout" value="logout">
     </a>

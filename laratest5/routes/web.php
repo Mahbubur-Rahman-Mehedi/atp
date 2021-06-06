@@ -44,8 +44,8 @@ Route::get('/logout', [LogoutController::class,'index']);
 
 // Route::get('/user/create', [UserController::class,'create']);
 
-// Route::get('/user/all', [UserController::class,'all']);
-Route::get('/user/create', [UserController::class,'create'] );
+Route::get('/user/list', [App\Http\Controllers\UserController::class,'list']);
+Route::get('/user/create', [App\Http\Controllers\UserController::class,'create'] );
 
 
 
