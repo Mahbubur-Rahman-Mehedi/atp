@@ -42,7 +42,10 @@ Route::get('/home', [HomeController::class,'index']);
 
 Route::get('/logout', [LogoutController::class,'index']);
 
-Route::get('/user/create', [UserController::class,'create']);
+// Route::get('/user/create', [UserController::class,'create']);
+
+// Route::get('/user/all', [UserController::class,'all']);
+Route::get('/user/create', [UserController::class,'create'] );
 
 
 
