@@ -47,5 +47,10 @@ Route::get('/logout', [LogoutController::class,'index']);
 Route::get('/user/list', [App\Http\Controllers\UserController::class,'list']);
 Route::get('/user/create', [App\Http\Controllers\UserController::class,'create'] );
 
+// for getting variable we use {variable name}
+
+Route::get('/user/details/{id}', [App\Http\Controllers\UserController::class,'details'] );
+Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class,'edit'] );
+Route::get('/user/delete/{id}', [App\Http\Controllers\UserController::class,'delete'] );
 
 

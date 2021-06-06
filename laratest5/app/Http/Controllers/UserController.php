@@ -24,13 +24,30 @@ class UserController extends Controller
     public function list()
     {
        $users =[
-        ['id' => 1,'name'=>'mehedi','pass'=>'123'],
-        ['id' => 2,'name'=>'rahman','pass'=>'1234'],
-        ['id' => 3,'name'=>'mahbubur','pass'=>'1111'],
-        ['id' => 4,'name'=>'me','pass'=>'3333'],
-        ['id' => 5,'name'=>'saon','pass'=>'222']
+        ['id' => 1,'username'=>'mehedi','email'=>'123@he'],
+        ['id' => 2,'username'=>'rahman','email'=>'1234@hi'],
+        ['id' => 3,'username'=>'mahbubur','email'=>'1111@gi'],
+        ['id' => 4,'username'=>'me','email'=>'3333@no'],
+        ['id' => 5,'username'=>'saon','email'=>'222@ok']
        ];
 
-       return view('user.userlist');
+    //    return view('user.userlist');
+
+    return view('user.userlist')->with('userlist',$users); // sending users array as userlist name
+
     }
+
+    public function details($id){
+        echo $id;
+
+    }
+
+    public function edit(){
+
+    }
+
+    public function delete(){
+
+    }
+
 }

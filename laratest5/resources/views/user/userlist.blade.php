@@ -15,23 +15,21 @@
             <td>ID</td>
             <td>Username</td>
             <td>Email</td>
-            <td>Type</td>
+            <td>Action</td>
         </tr>
-
-        <tr>
-            <td>1</td>
-            <td>abc</td>
-            <td>1234</td>
-            <td>admin</td>
-        </tr>
-
-        <tr>
-            <td>2</td>
-            <td>hello</td>
-            <td>121313</td>
-            <td>user</td>
-        </tr>
-
+        @foreach ($userlist as $user)
+            <tr>
+                <td>{{$user['id']}}</td>
+                <td>{{$user['username']}}</td>
+                <td>{{$user['email']}}</td>
+                <td>
+                    {{-- here we give a '/' at first of our url so that user doesn't show double in url --}}
+                    <a href="/user/details/{{$user['id']}}">Details</a>
+                    <a href="/user/edit/{{$user['id']}}">Edit</a>
+                    <a href="/user/delete/{{$user['id']}}">delete</a>
+                </td>
+            </tr>
+        @endforeach
 
 
 	</table>
