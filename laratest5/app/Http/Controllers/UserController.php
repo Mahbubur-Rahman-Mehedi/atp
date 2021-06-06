@@ -23,13 +23,7 @@ class UserController extends Controller
     }
     public function list()
     {
-       $users =[
-        ['id' => 1,'username'=>'mehedi','email'=>'123@he'],
-        ['id' => 2,'username'=>'rahman','email'=>'1234@hi'],
-        ['id' => 3,'username'=>'mahbubur','email'=>'1111@gi'],
-        ['id' => 4,'username'=>'me','email'=>'3333@no'],
-        ['id' => 5,'username'=>'saon','email'=>'222@ok']
-       ];
+       $users = $this->getUserList();
 
     //    return view('user.userlist');
 
@@ -37,16 +31,52 @@ class UserController extends Controller
 
     }
 
+    public function getUserList(){
+        return [
+            ['id' => 1,'username'=>'mehedi','email'=>'123@he'],
+            ['id' => 2,'username'=>'rahman','email'=>'1234@hi'],
+            ['id' => 3,'username'=>'mahbubur','email'=>'1111@gi'],
+            ['id' => 4,'username'=>'me','email'=>'3333@no'],
+            ['id' => 5,'username'=>'saon','email'=>'222@ok']
+           ];
+    }
+
+    public function getUser($id){
+
+        $users = $this->getUserList();
+
+        foreach ($users as $user) {
+            if($user['id']==$id)
+                return $user;
+        }
+
+        return "Not Found";
+    }
+
+
     public function details($id){
-        echo $id;
+
+        $user = $this->getUser($id);
+
+        return view('user.details')->with('user',$user);
 
     }
 
-    public function edit(){
+    public function edit($id){
 
     }
 
-    public function delete(){
+    public function update(Request $req, $id){ // after edit
+
+    }
+
+    public function delete($id){
+
+
+
+    }
+
+    public function destroy($id){ // after confirming delete
 
     }
 
