@@ -38,6 +38,8 @@ Route::post('/register', function () {
     echo "this is signup page";
  });
 
+//Route::get('/home', [HomeController::class,'index'])->name('home.index');
+
 Route::get('/home', [HomeController::class,'index']);
 
 Route::get('/logout', [LogoutController::class,'index']);
@@ -55,6 +57,8 @@ Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class,'edit'
 Route::post('/user/update/{id}', [App\Http\Controllers\UserController::class,'update'] );
 
 Route::get('/user/delete/{id}', [App\Http\Controllers\UserController::class,'delete'] );
-Route::post('/user/destroy/{id}', [App\Http\Controllers\UserController::class,'destroy'] );
+Route::get('/user/destroy/{id}', [App\Http\Controllers\UserController::class,'destroy'] );
+
+Route::get('/confirm/{id}', [App\Http\Controllers\actionController::class,'index'] );
 
 
