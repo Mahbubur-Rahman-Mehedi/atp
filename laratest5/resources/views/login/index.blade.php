@@ -22,8 +22,6 @@
 	</table>
 	</form>
 
-    <br>
-    {{session('msg')}}
-
-</body>
+	<br>
+	{{session('msg')}}
 </html>
