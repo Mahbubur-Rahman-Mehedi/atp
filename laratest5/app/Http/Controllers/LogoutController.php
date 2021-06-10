@@ -8,7 +8,9 @@ class LogoutController extends Controller
 {
     public function index(Request $req)
     {
-        $req->session->flush();
+        $req->session()->flush();
+        //$req->session()->forget('uname');
+        //$req->session()->forget('uname');
         return redirect('/login');
     }
 

@@ -39,7 +39,7 @@ Route::post('/register', function () {
  });
 
 //Route::get('/home', [HomeController::class,'index'])->name('home.index');
-
+//Route::get('/home', ['as'=>'home.index','uses'=>'HomeController@index']);
 Route::get('/home', [HomeController::class,'index']);
 
 Route::get('/logout', [LogoutController::class,'index']);
@@ -47,8 +47,8 @@ Route::get('/logout', [LogoutController::class,'index']);
 // Route::get('/user/create', [UserController::class,'create']);
 
 Route::get('/user/list', [App\Http\Controllers\UserController::class,'list']);
-Route::get('/user/create', [App\Http\Controllers\UserController::class,'create'] );
-
+Route::get('/user/create', [App\Http\Controllers\UserController::class,'create'] )->name('user.create');
+Route::post('/user/create', [App\Http\Controllers\UserController::class,'insert'] )->name('user.insert');
 // for getting variable we use {variable name}
 
 Route::get('/user/details/{id}', [App\Http\Controllers\UserController::class,'details'] );

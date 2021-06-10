@@ -15,7 +15,7 @@ class LoginController extends Controller
 
     public function verify(Request $req){
         $req->session()->put('uname',$req->uname);
-        //$req->session()->put('password',$this->password);
+        $req->session()->put('password',$req->password);
 
         //$req->session()->flush(); // delete all
         //$req->session()->forget('uname'); // delete uname from session
